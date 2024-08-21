@@ -30,7 +30,6 @@ def move(game_state: dict) -> dict:
     return {"move": next_move}
 
 
-# Start server when `python main.py` is run
 if __name__ == "__main__":
     from api.server import run_server
 
