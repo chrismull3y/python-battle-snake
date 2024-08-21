@@ -1,5 +1,5 @@
 from .snake import Snake
-from .coordinates import Coordinate
+from .coordinate import Coordinate
 
 
 class Board:

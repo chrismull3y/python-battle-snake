@@ -3,7 +3,7 @@ import random
 from .board import Board
 from .game import Game
 from .snake import Snake
-from .coordinates import Coordinate
+from .coordinate import Coordinate
 
 
 HEALTH_LIMIT = 90
