@@ -1,17 +1,26 @@
+from dataclasses import dataclass
+
 from .snake import Snake
 from .coordinate import Coordinate
 
 
+@dataclass
 class Board:
-    def __init__(self, board_data: dict):
-        self.height: int = board_data["height"]
-        self.width: int = board_data["width"]
-        self.food: Coordinate = [
-            Coordinate.from_dict(food) for food in board_data["food"]
-        ]
-        self.hazards: Coordinate = [
-            Coordinate.from_dict(hazard) for hazard in board_data["hazards"]
-        ]
-        self.snakes: list[Snake] = [
-            Snake(snake_data) for snake_data in board_data["snakes"]
-        ]
+    height: int
+    width: int
+    food: list[Coordinate] 
+    hazards: list[Coordinate] 
+    snakes: list[Snake]
+
+    @classmethod
+    def from_dict(cls, board_data: dict):
+        food = [Coordinate.from_dict(item) for item in board_data['food']]
+        hazards = [Coordinate.from_dict(item) for item in board_data['hazards']]
+        snakes = [Snake.from_dict(snake_data) for snake_data in board_data['snakes']]
+        return cls(
+            height=int(board_data['height']),
+            width=int(board_data['width']),
+            food=food,
+            hazards=hazards,
+            snakes=snakes
+        )

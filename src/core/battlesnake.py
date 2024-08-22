@@ -13,8 +13,8 @@ class Battlesnake:
     def __init__(self, game_state):
         self.game: Game = Game(game_state["game"])
         self.turn: int = game_state["turn"]
-        self.board: Board = Board(game_state["board"])
-        self.you: Snake = Snake(game_state["you"])
+        self.board: Board = Board.from_dict(game_state["board"])
+        self.you: Snake = Snake.from_dict(game_state["you"])
         self.needs_food: bool = self.you.health < HEALTH_LIMIT
 
     def calculate_best_move(self):
@@ -104,4 +104,4 @@ class Battlesnake:
     def maximize_space(self, safe_moves):
         # TODO: Create a algorithim to maximize board space. Maybe flood fill?
         # https://docs.battlesnake.com/guides/useful-algorithms
-        return random.choice(safe_moves)
+        return safe_moves[0]

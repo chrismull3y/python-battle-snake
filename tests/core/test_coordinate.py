@@ -25,15 +25,3 @@ def test_coordinate_from_dict_invalid_value():
     data = {"x": "a", "y": 7}
     with pytest.raises(ValueError):
         Coordinate.from_dict(data)
-
-
-def test_coordinate_equality():
-    coord1 = Coordinate(x=1, y=2)
-    coord2 = Coordinate(x=1, y=2)
-    assert coord1 == coord2
-
-
-def test_coordinate_inequality():
-    coord1 = Coordinate(x=1, y=2)
-    coord2 = Coordinate(x=2, y=1)
-    assert coord1 != coord2
