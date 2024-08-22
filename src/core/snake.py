@@ -13,13 +13,13 @@ class Snake:
 
     @classmethod
     def from_dict(cls, snake_data: dict):
-        head = Coordinate.from_dict(snake_data['head'])
-        body = [Coordinate.from_dict(part) for part in snake_data['body']]
+        head = Coordinate.from_dict(snake_data["head"])
+        body = [Coordinate.from_dict(part) for part in snake_data["body"]]
         return cls(
-            id=snake_data['id'],
-            name=snake_data['name'],
-            health=int(snake_data['health']),
+            id=snake_data["id"],
+            name=snake_data["name"],
+            health=int(snake_data["health"]),
             head=head,
             body=body,
-            length=int(snake_data['length'])
+            length=int(snake_data["length"]),
         )

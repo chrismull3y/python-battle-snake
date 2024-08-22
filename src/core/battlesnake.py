@@ -13,7 +13,7 @@ class Battlesnake:
         self.needs_food: bool = self.you.health < HEALTH_LIMIT
 
     def calculate_best_move(self):
-        possible_moves = ["up","down","left","right"]
+        possible_moves = ["up", "down", "left", "right"]
         safe_moves = self.filter_safe_moves(possible_moves)
         if not safe_moves:
             return "up"

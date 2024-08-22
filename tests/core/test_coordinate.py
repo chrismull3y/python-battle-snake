@@ -1,5 +1,5 @@
 import pytest
-from src.core.coordinate import Coordinate 
+from src.core.coordinate import Coordinate
 
 
 def test_coordinate_creation():

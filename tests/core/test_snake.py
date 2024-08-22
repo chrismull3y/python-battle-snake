@@ -30,5 +30,5 @@ def test_snake_attribute_types(snake):
     assert isinstance(snake.health, int)
     assert isinstance(snake.head, Coordinate)
     assert isinstance(snake.body, list)
-    assert all(isinstance(part, Coordinate) for part in snake.body) 
+    assert all(isinstance(part, Coordinate) for part in snake.body)
     assert isinstance(snake.length, int)

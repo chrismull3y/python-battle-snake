@@ -1,6 +1,7 @@
 import pytest
 import json
 
+
 @pytest.fixture()
 def game_state():
     json_path = "tests/core/example_game_state.json"
