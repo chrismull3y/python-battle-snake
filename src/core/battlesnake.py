@@ -1,7 +1,4 @@
-import random
-
 from .board import Board
-from .game import Game
 from .snake import Snake
 from .coordinate import Coordinate
 
@@ -11,8 +8,6 @@ HEALTH_LIMIT = 90
 
 class Battlesnake:
     def __init__(self, game_state):
-        self.game: Game = Game(game_state["game"])
-        self.turn: int = game_state["turn"]
         self.board: Board = Board.from_dict(game_state["board"])
         self.you: Snake = Snake.from_dict(game_state["you"])
         self.needs_food: bool = self.you.health < HEALTH_LIMIT
