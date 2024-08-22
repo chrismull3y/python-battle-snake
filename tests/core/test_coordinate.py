@@ -21,9 +21,9 @@ def test_coordinate_from_dict_missing_key():
         Coordinate.from_dict(data)
 
 
-def test_coordinate_from_dict_invalid_type():
+def test_coordinate_from_dict_invalid_value():
     data = {"x": "a", "y": 7}
-    with pytest.raises(TypeError):
+    with pytest.raises(ValueError):
         Coordinate.from_dict(data)
 
 

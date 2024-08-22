@@ -8,4 +8,4 @@ class Coordinate:
 
     @classmethod
     def from_dict(cls, data):
-        return cls(x=data["x"], y=data["y"])
+        return cls(x=int(data["x"]), y=int(data["y"]))
