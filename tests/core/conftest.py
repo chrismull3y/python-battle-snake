@@ -4,7 +4,7 @@ import json
 
 @pytest.fixture()
 def game_state():
-    json_path = "tests/core/example_game_state.json"
+    json_path = "tests/assets/example_game_state.json"
     with open(json_path, "r") as file:
         data = json.load(file)
     return data
