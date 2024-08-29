@@ -78,7 +78,7 @@ class Battlesnake:
         if not self.board.hazards:
             return None
 
-        hazard_positions = {hazard for hazard in self.board.hazards}
+        hazard_positions = [hazard for hazard in self.board.hazards]
         head = self.you.head
         safe_from_hazards = [
             move
